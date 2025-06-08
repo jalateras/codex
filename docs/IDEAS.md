@@ -31,6 +31,7 @@ This document outlines high-level concepts for extending OpenAI Codex CLI into v
         -   Generates `requirements.txt` (Python), `environment.yml` (Conda), or modifies `Cargo.toml` (Rust).
         -   Suggests and (with approval) runs commands to create virtual environments (`python -m venv`, `conda create`), install packages (`pip install`, `conda install`, `cargo add`).
         -   Could be enhanced with domain-specific `AGENTS.md` files pre-loaded with common package lists or environment configurations.
+-   [View Detailed Elaboration](./ideas/01-domain-environment-scaffolding.md)
 
 ### 2. Smart CLI Wrapper for Domain Tools
 -   **Target Domain(s)**: Any domain with complex command-line tools (e.g., Bioinformatics, MLOps, Cloud Infrastructure).
@@ -40,6 +41,7 @@ This document outlines high-level concepts for extending OpenAI Codex CLI into v
         -   Can guide users through complex multi-step CLI operations.
         -   Can validate parameters or suggest common options based on context or `AGENTS.md`.
         -   Executes the commands (sandboxed where appropriate).
+-   [View Detailed Elaboration](./ideas/02-smart-cli-wrapper.md)
 
 ### 3. Automated Data Validation & Reporting Boilerplate
 -   **Target Domain(s)**: Data Science, Ag-Tech, Health.
@@ -49,6 +51,7 @@ This document outlines high-level concepts for extending OpenAI Codex CLI into v
         -   Generates scripts (e.g., Python with Pandas, R with dplyr) to perform these checks.
         -   Can create a basic markdown report template to be filled by the script's output.
         -   Modifies files to include the script and can run it.
+-   [View Detailed Elaboration](./ideas/03-data-validation-reporting.md)
 
 ## Data Science Ideas
 
@@ -60,6 +63,7 @@ This document outlines high-level concepts for extending OpenAI Codex CLI into v
         -   Generates Python scripts using libraries like Matplotlib, Seaborn, or Plotly.
         -   Can save plots to files or attempt to display them if in a suitable environment.
         -   Handles basic data loading within the script.
+-   [View Detailed Elaboration](./ideas/04-automated-visualization.md)
 
 ### 5. Notebook-to-Script (and vice-versa) Converter
 -   **Target Domain(s)**: Data Science.
@@ -69,6 +73,7 @@ This document outlines high-level concepts for extending OpenAI Codex CLI into v
         -   Performs structural transformations (e.g., extracting code cells, converting function docstrings to markdown).
         -   Creates new files with the converted content.
         -   Could handle basic refactoring like parameterizing script inputs.
+-   [View Detailed Elaboration](./ideas/05-notebook-script-converter.md)
 
 ## Ag-Tech (Agriculture Technology) Ideas
 
@@ -79,6 +84,7 @@ This document outlines high-level concepts for extending OpenAI Codex CLI into v
         -   Agent understands prompts related to common Ag-IoT platforms or data formats (could be trained or guided by `AGENTS.md`).
         -   Generates scripts (Python, etc.) to interact with relevant APIs or parse local files.
         -   Can perform simple aggregations or transformations on the data.
+-   [View Detailed Elaboration](./ideas/06-ag-iot-helper.md)
 
 ### 7. Geospatial & Remote Sensing Scripting Assistant
 -   **Target Domain(s)**: Ag-Tech, Environmental Science.
@@ -87,6 +93,7 @@ This document outlines high-level concepts for extending OpenAI Codex CLI into v
         -   Agent recognizes geospatial terms and libraries (GDAL, Rasterio, Shapely).
         -   Generates Python scripts for specific analyses or data fetching tasks.
         -   Can help construct API calls to geospatial data services.
+-   [View Detailed Elaboration](./ideas/07-geospatial-scripting.md)
 
 ## Health Domain Ideas
 
@@ -98,6 +105,7 @@ This document outlines high-level concepts for extending OpenAI Codex CLI into v
         -   Can generate boilerplate for data cleaning, filtering, or transformation.
         -   **Crucially, Codex itself would not perform anonymization but could script calls to user-specified external tools or libraries that do.**
         -   Heavy reliance on user oversight and `AGENTS.md` for defining safe operations.
+-   [View Detailed Elaboration](./ideas/08-health-data-preprocessing.md)
 
 ### 9. Bioinformatics Tool Automation & Scripting
 -   **Target Domain(s)**: Health, Bioinformatics.
@@ -107,14 +115,16 @@ This document outlines high-level concepts for extending OpenAI Codex CLI into v
         -   Agent understands common bioinformatics workflows and parameter patterns.
         -   Generates shell scripts or directly executes commands.
         -   Can help manage input/output files and formats.
+-   [View Detailed Elaboration](./ideas/09-bioinformatics-automation.md)
 
 ### 10. Clinical Data Analysis Scripting Support
 -   **Target Domain(s)**: Health, Clinical Research.
--   **Description**: Generate boilerplate for statistical analysis scripts used in clinical research. Example: `"codex create an R script to perform a t-test on 'treatment_group' vs 'control_group' for outcome 'blood_pressure' from 'clinical_data.csv'"` or `"codex generate python code for a Kaplan-Meier survival analysis using lifelines library"`.
+-   **Description**: Generate boilerplate for statistical analysis scripts used in clinical research. Example: `"codex create an R script to perform a t-test on 'treatment_group' vs 'control_group' for outcome 'blood_pressure' from 'trial_data.csv'"` or `"codex generate python code for a Kaplan-Meier survival analysis using lifelines library"`.
     -   **CLI/Agent Leverage**:
         -   Agent recognizes common statistical tests and analysis types.
         -   Generates R or Python (with Scipy, Statsmodels, Lifelines) code snippets or full scripts.
         -   Can help structure data loading and result presentation.
+-   [View Detailed Elaboration](./ideas/10-clinical-analysis-scripting.md)
 
 ## Leveraging Codex Core Features
 Many of these ideas would be significantly enhanced by:
